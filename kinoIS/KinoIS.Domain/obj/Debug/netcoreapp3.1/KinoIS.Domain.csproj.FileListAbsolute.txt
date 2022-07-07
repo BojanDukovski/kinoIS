@@ -1,0 +1,10 @@
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\bin\Debug\netcoreapp3.1\KinoIS.Domain.deps.json
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\bin\Debug\netcoreapp3.1\KinoIS.Domain.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\bin\Debug\netcoreapp3.1\KinoIS.Domain.pdb
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\obj\Debug\netcoreapp3.1\KinoIS.Domain.csproj.AssemblyReference.cache
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\obj\Debug\netcoreapp3.1\KinoIS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\obj\Debug\netcoreapp3.1\KinoIS.Domain.AssemblyInfoInputs.cache
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\obj\Debug\netcoreapp3.1\KinoIS.Domain.AssemblyInfo.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\obj\Debug\netcoreapp3.1\KinoIS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\obj\Debug\netcoreapp3.1\KinoIS.Domain.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Domain\obj\Debug\netcoreapp3.1\KinoIS.Domain.pdb
