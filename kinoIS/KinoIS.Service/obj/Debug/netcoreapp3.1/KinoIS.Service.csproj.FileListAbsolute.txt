@@ -8,3 +8,8 @@ C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\obj\Debug\netcoreap
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\obj\Debug\netcoreapp3.1\KinoIS.Service.csproj.CoreCompileInputs.cache
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\obj\Debug\netcoreapp3.1\KinoIS.Service.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\obj\Debug\netcoreapp3.1\KinoIS.Service.pdb
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\bin\Debug\netcoreapp3.1\KinoIS.Domain.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\bin\Debug\netcoreapp3.1\KinoIs.Repository.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\bin\Debug\netcoreapp3.1\KinoIS.Domain.pdb
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\bin\Debug\netcoreapp3.1\KinoIs.Repository.pdb
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Service\obj\Debug\netcoreapp3.1\KinoIS.Service.csproj.CopyComplete

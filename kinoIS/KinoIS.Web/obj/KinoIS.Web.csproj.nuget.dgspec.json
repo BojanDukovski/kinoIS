@@ -155,7 +155,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj": {
+                "projectPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj"
+              },
+              "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\KinoIs.Repository.csproj": {
+                "projectPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\KinoIs.Repository.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -250,13 +257,17 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.12, )"
+              "version": "[3.1.25, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.12, )"
+              "version": "[3.1.25, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [

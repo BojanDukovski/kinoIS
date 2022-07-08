@@ -4,6 +4,134 @@
     "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Service\\KinoIS.Service.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj",
+        "projectName": "KinoIS.Domain",
+        "projectPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj",
+        "packagesPath": "C:\\Users\\Bojan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Bojan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\KinoIs.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\KinoIs.Repository.csproj",
+        "projectName": "KinoIs.Repository",
+        "projectPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\KinoIs.Repository.csproj",
+        "packagesPath": "C:\\Users\\Bojan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Bojan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj": {
+                "projectPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Service\\KinoIS.Service.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +155,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj": {
+                "projectPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Domain\\KinoIS.Domain.csproj"
+              },
+              "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\KinoIs.Repository.csproj": {
+                "projectPath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIs.Repository\\KinoIs.Repository.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

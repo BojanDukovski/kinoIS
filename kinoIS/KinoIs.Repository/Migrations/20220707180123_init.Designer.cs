@@ -21,7 +21,7 @@ namespace KinoIs.Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("KinoIS.Domain.Models.KinoUser", b =>
+            modelBuilder.Entity("KinoIS.Domain.Models.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -241,7 +241,7 @@ namespace KinoIs.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("KinoIS.Domain.Models.KinoUser", null)
+                    b.HasOne("KinoIS.Domain.Models.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -250,7 +250,7 @@ namespace KinoIs.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("KinoIS.Domain.Models.KinoUser", null)
+                    b.HasOne("KinoIS.Domain.Models.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -265,7 +265,7 @@ namespace KinoIs.Repository.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("KinoIS.Domain.Models.KinoUser", null)
+                    b.HasOne("KinoIS.Domain.Models.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -274,7 +274,7 @@ namespace KinoIs.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("KinoIS.Domain.Models.KinoUser", null)
+                    b.HasOne("KinoIS.Domain.Models.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -1,0 +1,37 @@
+﻿using KinoIs.Repository.Interface;
+using KinoIS.Domain.Models;
+using KinoIS.Repository;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace KinoIs.Repository.Implementation
+{
+    public class TicketRepositoryImpl : TicketRepository
+    {
+        private readonly ApplicationDbContext context;
+        private DbSet<Ticket> entities;
+        public TicketRepositoryImpl(ApplicationDbContext context)
+        {
+            this.context = context;
+            entities = context.Set<Ticket>();
+        }
+        public Ticket addTicket(Ticket ticket)
+        {
+            this.entities.Add(ticket);
+            return ticket;
+        }
+
+        public void deleteTicket(Ticket ticket)
+        {
+            this.entities.Remove(ticket);
+        }
+
+        public List<Ticket> findAll()
+        {
+            return this.context.tickets.ToList();
+        }
+    }
+}

@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\" />
-    <Folder Include="Implementation\" />
+    <ProjectReference Include="..\KinoIS.Domain\KinoIS.Domain.csproj" />
+    <ProjectReference Include="..\KinoIs.Repository\KinoIs.Repository.csproj" />
   </ItemGroup>
 
 </Project>

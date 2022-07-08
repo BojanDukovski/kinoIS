@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\" />
-    <Folder Include="Implementation\" />
+    <Compile Remove="Migrations\20220708122007_a.cs" />
+    <Compile Remove="Migrations\20220708122007_a.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
