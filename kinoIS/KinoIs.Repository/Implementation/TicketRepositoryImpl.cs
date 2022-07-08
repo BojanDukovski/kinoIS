@@ -33,5 +33,10 @@ namespace KinoIs.Repository.Implementation
         {
             return this.context.tickets.ToList();
         }
+
+        public List<Ticket> findAllByDate(DateTime dateParam)
+        {
+            return this.context.tickets.Where(x => x.date.Equals(dateParam)).ToList();
+        }
     }
 }

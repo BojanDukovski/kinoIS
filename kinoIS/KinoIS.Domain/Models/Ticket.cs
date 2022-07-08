@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace KinoIS.Domain.Models
@@ -10,5 +11,6 @@ namespace KinoIS.Domain.Models
         public string Movie { get; set; }
         public int Quantity { get; set; }
         public string Genre { get; set; }
+        public DateTime date { get; set; }
     }
 }

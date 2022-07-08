@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KinoIS.Domain.Models;
 using KinoIS.Repository;
+using KinoIs.Repository.Interface;
 
 namespace KinoIS.Web.Controllers
 {
     public class TicketsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly TicketRepository ticketRepository;
 
-        public TicketsController(ApplicationDbContext context)
+        public TicketsController(ApplicationDbContext context, TicketRepository ticketRepository)
         {
             _context = context;
+            this.ticketRepository = ticketRepository;   
         }
 
         // GET: Tickets
@@ -54,7 +57,7 @@ namespace KinoIS.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Movie,Quantity,Genre")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,Movie,Quantity,Genre,date")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +90,7 @@ namespace KinoIS.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Movie,Quantity,Genre")] Ticket ticket)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Movie,Quantity,Genre,date")] Ticket ticket)
         {
             if (id != ticket.Id)
             {
@@ -149,6 +152,12 @@ namespace KinoIS.Web.Controllers
         private bool TicketExists(Guid id)
         {
             return _context.tickets.Any(e => e.Id == id);
+        }
+        [HttpPost]
+        public IActionResult SearchByDate(DateTime date) 
+        {
+            List<Ticket> tickets = this.ticketRepository.findAllByDate(date);
+            return View("Index", tickets);
         }
     }
 }

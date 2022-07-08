@@ -28,5 +28,10 @@ namespace KinoIS.Service.Implementation
         {
             return this.ticketRepository.findAll();
         }
+
+        public List<Ticket> findAllByDate(DateTime date)
+        {
+            return this.ticketRepository.findAllByDate(date);
+        }
     }
 }

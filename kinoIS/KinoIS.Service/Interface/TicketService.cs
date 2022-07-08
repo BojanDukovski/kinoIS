@@ -10,5 +10,6 @@ namespace KinoIS.Service.Interface
         Ticket addTicket(Ticket ticket);
         void deleteTicket(Ticket ticket);
         List<Ticket> findAll();
+        List<Ticket> findAllByDate(DateTime date);
     }
 }

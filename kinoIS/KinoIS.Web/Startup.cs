@@ -1,5 +1,8 @@
+using KinoIs.Repository.Implementation;
+using KinoIs.Repository.Interface;
 using KinoIS.Domain.Models;
 using KinoIS.Repository;
+using KinoIS.Service.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +38,10 @@ namespace KinoIS.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddScoped(typeof(TicketRepository), typeof(TicketRepositoryImpl));
+
+            services.AddTransient<TicketService, Service.Implementation.TicketServiceImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
