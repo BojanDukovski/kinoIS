@@ -1,5 +1,7 @@
-﻿using KinoIS.Domain.Models;
+﻿
+using KinoIS.Domain.Models;
 using KinoIS.Repository;
+using KinoIS.Service.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,16 +16,19 @@ namespace KinoIS.Web.Controllers
 {
     public class KinoAccountController : Controller
     {
+        private readonly ShoppingCartService shoppingCartService;
         private DbSet<KinoUser> entities;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly ApplicationDbContext context;
-        public KinoAccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext context)
+        public KinoAccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, 
+            ApplicationDbContext context, ShoppingCartService shoppingCartService)
         {
             this.context = context;
             this.userManager = userManager;
             this.signInManager = signInManager;
             entities = context.Set<KinoUser>();
+            this.shoppingCartService = shoppingCartService; 
         }
 
         public IActionResult Register()
@@ -55,6 +60,7 @@ namespace KinoIS.Web.Controllers
                     var result = await userManager.CreateAsync(user, request.Password);
                     if (result.Succeeded)
                     {
+                        ShoppingCart shoppingCart = this.shoppingCartService.create(user.Id);
                         return RedirectToAction("Login");
                     }
                     else
@@ -75,6 +81,7 @@ namespace KinoIS.Web.Controllers
                     return View(request);
                 }
             }
+
             return View(request);
 
         }

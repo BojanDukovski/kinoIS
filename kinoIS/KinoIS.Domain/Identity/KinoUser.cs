@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using KinoIS.Domain.Models;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KinoIS.Domain.Models
+namespace KinoIS.Domain.Models 
 {
     public class KinoUser : IdentityUser
     {
@@ -11,5 +12,6 @@ namespace KinoIS.Domain.Models
         public string Surname { get; set; }
         public string Role { get; set; }
         public string Password { get; set; }
+        public virtual ShoppingCart UserCart { get; set; }
     }
 }

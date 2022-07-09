@@ -1,0 +1,10 @@
+﻿@model ICollection<KinoIS.Domain.Relations.TicketInShoppingCart>
+
+
+<h1>Owner: @ViewBag.Owner</h1>
+<ul>
+    @foreach(var item in Model)
+    {
+        <li>@item.Id</li>
+    }
+</ul>

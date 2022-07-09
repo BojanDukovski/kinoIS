@@ -441,3 +441,9 @@ C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Details.cshtml.g.cs
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Edit.cshtml.g.cs
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Index.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Create.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Delete.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Details.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Edit.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Index.cshtml.g.cs

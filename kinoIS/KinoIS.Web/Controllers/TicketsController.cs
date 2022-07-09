@@ -8,18 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using KinoIS.Domain.Models;
 using KinoIS.Repository;
 using KinoIs.Repository.Interface;
+using KinoIS.Service.Interface;
 
 namespace KinoIS.Web.Controllers
 {
     public class TicketsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly TicketInShoppingCartService ticketInShoppingCartService;
         private readonly TicketRepository ticketRepository;
+        private readonly ApplicationDbContext _context;
 
-        public TicketsController(ApplicationDbContext context, TicketRepository ticketRepository)
+        public TicketsController(ApplicationDbContext context, TicketRepository ticketRepository, TicketInShoppingCartService ticketInShoppingCartService)
         {
             _context = context;
-            this.ticketRepository = ticketRepository;   
+            this.ticketRepository = ticketRepository;
+            this.ticketInShoppingCartService = ticketInShoppingCartService;
         }
 
         // GET: Tickets
@@ -158,6 +161,12 @@ namespace KinoIS.Web.Controllers
         {
             List<Ticket> tickets = this.ticketRepository.findAllByDate(date);
             return View("Index", tickets);
+        }
+
+        public IActionResult AddToCart(Guid? id)
+        {
+            //TODO
+            return View();
         }
     }
 }

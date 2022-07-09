@@ -5,6 +5,9 @@
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
+    <li>
+        <a class="nav-link text-dark" asp-route-email="@User.Identity.Name" asp-controller="ShoppingCarts" asp-action="Details">Shopping Cart</a>
+    </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-controller="KinoAccount" asp-action="GiveRole">Give Role</a>
     </li>

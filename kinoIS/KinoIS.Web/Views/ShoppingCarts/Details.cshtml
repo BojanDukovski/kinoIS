@@ -1,0 +1,24 @@
+﻿@model KinoIS.Domain.Models.ShoppingCart
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ShoppingCart</h4>
+    <hr />
+    <dl class="row" style="border: dashed red 1px;">
+        <dt class = "col-1">
+            <h3>@Html.DisplayNameFor(model => model.Owner): </h3>
+        </dt>
+        <dd class = "col-11">
+            <h3> <b>@Html.DisplayFor(model => model.Owner.Name) @Html.DisplayFor(model => model.Owner.Surname)</b></h3> 
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

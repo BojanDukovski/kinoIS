@@ -39,9 +39,16 @@ namespace KinoIS.Web
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddScoped(typeof(TicketRepository), typeof(TicketRepositoryImpl));
+
+            services.AddScoped(typeof(TicketRepository), typeof(TicketRepositoryImpl)); 
+            services.AddScoped(typeof(ShoppingCartRepository), typeof(ShoppingCartRepositoryImpl));
+            services.AddScoped(typeof(TicketInShoppingCartRepository), typeof(TicketInShoppingCartRepositoryImpl));
+            services.AddScoped(typeof(KinoUserRepository), typeof(KinoUserRepositoryImpl));
 
             services.AddTransient<TicketService, Service.Implementation.TicketServiceImpl>();
+            services.AddTransient<ShoppingCartService, Service.Implementation.ShoppingCartServiceImpl>();
+            services.AddTransient<KinoUserService, Service.Implementation.KinoUserServiceImpl>();
+            services.AddTransient<TicketInShoppingCartService, Service.Implementation.TicketInShoppingCartServiceImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

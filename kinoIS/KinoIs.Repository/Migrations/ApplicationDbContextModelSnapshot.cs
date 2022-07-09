@@ -19,6 +19,24 @@ namespace KinoIs.Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("KinoIS.Domain.Models.ShoppingCart", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId")
+                        .IsUnique()
+                        .HasFilter("[OwnerId] IS NOT NULL");
+
+                    b.ToTable("shoppingCarts");
+                });
+
             modelBuilder.Entity("KinoIS.Domain.Models.Ticket", b =>
                 {
                     b.Property<Guid>("Id")
@@ -40,6 +58,27 @@ namespace KinoIs.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tickets");
+                });
+
+            modelBuilder.Entity("KinoIS.Domain.Relations.TicketInShoppingCart", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ShoppingCartId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TicketId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShoppingCartId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("ticketInShoppingCarts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -248,7 +287,7 @@ namespace KinoIs.Repository.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("KinoIS.Domain.Models.KinoUser", b =>
+            modelBuilder.Entity("KinoIS.Domain.Identity.KinoUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -265,6 +304,28 @@ namespace KinoIs.Repository.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("KinoUser");
+                });
+
+            modelBuilder.Entity("KinoIS.Domain.Models.ShoppingCart", b =>
+                {
+                    b.HasOne("KinoIS.Domain.Identity.KinoUser", "Owner")
+                        .WithOne("UserCart")
+                        .HasForeignKey("KinoIS.Domain.Models.ShoppingCart", "OwnerId");
+                });
+
+            modelBuilder.Entity("KinoIS.Domain.Relations.TicketInShoppingCart", b =>
+                {
+                    b.HasOne("KinoIS.Domain.Models.ShoppingCart", "UserCart")
+                        .WithMany("TicketInShoppingCarts")
+                        .HasForeignKey("ShoppingCartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KinoIS.Domain.Models.Ticket", "CurrentTicket")
+                        .WithMany("TicketInShoppingCarts")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
