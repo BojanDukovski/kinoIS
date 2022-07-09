@@ -19,6 +19,14 @@ namespace KinoIs.Repository.Implementation
             entities = context.Set<TicketInShoppingCart>();
         }
 
+        public TicketInShoppingCart add(Guid shoppingCartId, Guid ticketId)
+        {
+            TicketInShoppingCart ticketInShoppingCart = new TicketInShoppingCart(shoppingCartId, ticketId);
+            context.ticketInShoppingCarts.Add(ticketInShoppingCart);
+            context.SaveChanges();
+            return ticketInShoppingCart;
+        }
+
         public List<TicketInShoppingCart> findAll()
         {
             return this.context.ticketInShoppingCarts.ToList();

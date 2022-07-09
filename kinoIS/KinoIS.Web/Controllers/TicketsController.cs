@@ -9,6 +9,7 @@ using KinoIS.Domain.Models;
 using KinoIS.Repository;
 using KinoIs.Repository.Interface;
 using KinoIS.Service.Interface;
+using System.Security.Claims;
 
 namespace KinoIS.Web.Controllers
 {
@@ -17,12 +18,15 @@ namespace KinoIS.Web.Controllers
         private readonly TicketInShoppingCartService ticketInShoppingCartService;
         private readonly TicketRepository ticketRepository;
         private readonly ApplicationDbContext _context;
+        private readonly ShoppingCartService shoppingCartService;
 
-        public TicketsController(ApplicationDbContext context, TicketRepository ticketRepository, TicketInShoppingCartService ticketInShoppingCartService)
+        public TicketsController(ApplicationDbContext context, TicketRepository ticketRepository, 
+            TicketInShoppingCartService ticketInShoppingCartService, ShoppingCartService shoppingCartService)
         {
             _context = context;
             this.ticketRepository = ticketRepository;
             this.ticketInShoppingCartService = ticketInShoppingCartService;
+            this.shoppingCartService = shoppingCartService;
         }
 
         // GET: Tickets
@@ -163,10 +167,11 @@ namespace KinoIS.Web.Controllers
             return View("Index", tickets);
         }
 
-        public IActionResult AddToCart(Guid? id)
+        public IActionResult AddToCart(Guid ticketId)
         {
-            //TODO
-            return View();
+            ShoppingCart shoppingCart = this.shoppingCartService.findByOwnerId(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            this.ticketInShoppingCartService.add(shoppingCart.Id, ticketId);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

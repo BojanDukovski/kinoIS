@@ -9,5 +9,6 @@ namespace KinoIS.Service.Interface
     {
         List<TicketInShoppingCart> findAll();
         List<TicketInShoppingCart> findAllByShoppingCartId(Guid id);
+        TicketInShoppingCart add(Guid shoppingCartId, Guid ticketId);
     }
 }

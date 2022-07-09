@@ -9,6 +9,7 @@ using KinoIS.Domain.Models;
 using KinoIS.Repository;
 using KinoIS.Service.Interface;
 using System.Security.Claims;
+using KinoIS.Domain.Relations;
 
 namespace KinoIS.Web.Controllers
 {
@@ -18,12 +19,15 @@ namespace KinoIS.Web.Controllers
         private readonly ShoppingCartService shoppingCartService;
         private readonly TicketInShoppingCartService ticketInShoppingCartService;
         private readonly KinoUserService kinoUserService;
+        private readonly TicketService ticketService;
 
-        public ShoppingCartsController(ShoppingCartService shoppingCartService, TicketInShoppingCartService ticketInShoppingCartService, ApplicationDbContext context)
+        public ShoppingCartsController(ShoppingCartService shoppingCartService, TicketInShoppingCartService ticketInShoppingCartService,
+            ApplicationDbContext context, TicketService ticketService)
         {
             this.ticketInShoppingCartService = ticketInShoppingCartService;
             this.shoppingCartService = shoppingCartService;
             _context = context;
+            this.ticketService = ticketService;
         }
 
         /*
@@ -70,6 +74,17 @@ namespace KinoIS.Web.Controllers
         {
             KinoUser user = this._context.users.Where(x => x.Email.Equals(email)).FirstOrDefault();
             ShoppingCart shoppingCart = this._context.shoppingCarts.Where(x => x.OwnerId.Equals(user.Id)).FirstOrDefault();
+
+            List<TicketInShoppingCart> idsOfTicketsInShoppingCart = this.ticketInShoppingCartService.findAllByShoppingCartId(shoppingCart.Id);
+            ViewBag.idsOftTicketsInShoppingCart = idsOfTicketsInShoppingCart;
+
+            List<Ticket> tickets = new List<Ticket>();
+            foreach(var item in idsOfTicketsInShoppingCart)
+            {
+                tickets.Add(this.ticketService.findById(item.TicketId));
+            }
+
+            ViewBag.tickets = tickets;
             return View(shoppingCart);
 
         }

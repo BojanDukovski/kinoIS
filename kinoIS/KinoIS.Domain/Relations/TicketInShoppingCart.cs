@@ -13,5 +13,11 @@ namespace KinoIS.Domain.Relations
         public Guid ShoppingCartId { get; set; }
         public virtual ShoppingCart UserCart { get; set; }
 
+        public TicketInShoppingCart(Guid ShoppingCartId, Guid TicketId)
+        {
+            this.ShoppingCartId = ShoppingCartId;
+            this.TicketId = TicketId;
+        }
+
     }
 }

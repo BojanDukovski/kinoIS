@@ -14,6 +14,12 @@ namespace KinoIS.Service.Implementation
         {
             this.ticketInShoppingCartRepository = ticketInShoppingCartRepository;
         }
+
+        public TicketInShoppingCart add(Guid shoppingCartId, Guid ticketId)
+        {
+            return this.ticketInShoppingCartRepository.add(shoppingCartId, ticketId);
+        }
+
         public List<TicketInShoppingCart> findAll()
         {
             return this.ticketInShoppingCartRepository.findAll();
