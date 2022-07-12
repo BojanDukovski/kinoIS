@@ -6,6 +6,8 @@
 
 <h1>Index</h1>
 
+<p id="oc" orderCompleted="@ViewBag.OrderCompleted"></p>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -59,3 +61,13 @@
 }
     </tbody>
 </table>
+
+@section Scripts {
+  <script>
+    $(function () {
+      if ($("#oc").attr("orderCompleted")) {
+          alert("Your order is completed. Check your email!"); 
+      }
+    });
+  </script>
+}

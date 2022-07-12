@@ -8,5 +8,6 @@ namespace KinoIs.Repository.Interface
     public interface KinoUserRepository
     {
         KinoUser findById(string id);
+        KinoUser Update(KinoUser user);
     }
 }

@@ -13,7 +13,7 @@ namespace KinoIS.Service.Interface
         ShoppingCart findByOwnerId(string ownerId);
         void deleteById(Guid id);
         ShoppingCart create(string ownerId);
-        
+        bool order(string userId);
 
     }
 }

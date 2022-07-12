@@ -10,6 +10,7 @@ using KinoIS.Repository;
 using KinoIS.Service.Interface;
 using System.Security.Claims;
 using KinoIS.Domain.Relations;
+using Stripe;
 
 namespace KinoIS.Web.Controllers
 {
@@ -175,6 +176,55 @@ namespace KinoIS.Web.Controllers
         private bool ShoppingCartExists(Guid id)
         {
             return _context.shoppingCarts.Any(e => e.Id == id);
+        }
+
+        public Boolean Order()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var result = this.shoppingCartService.order(userId);
+
+            return result;
+        }
+
+        public IActionResult PayOrder(string stripeEmail, string stripeToken)
+        {
+            var customerService = new CustomerService();
+            var chargeService = new ChargeService();
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var order = this.shoppingCartService.findByOwnerId(userId); 
+
+            var customer = customerService.Create(new CustomerCreateOptions
+            {
+                Email = stripeEmail,
+                Source = stripeToken
+            });
+
+            var charge = chargeService.Create(new ChargeCreateOptions
+            {
+                Amount = (Convert.ToInt32(3.33) * 100), //namesti order.TotalPrice
+                Description = "EShop Application Payment",
+                Currency = "usd",
+                Customer = customer.Id
+            });
+
+            if (charge.Status == "succeeded")
+            {
+                var result = this.Order();
+
+                if (result)
+                {
+                    var orderCompleted = true;
+                    return RedirectToAction( "Index", "Tickets", new {orderCompleted});
+                }
+                else
+                {
+                    return RedirectToAction("Index", "ShoppingCart");
+                }
+            }
+
+            return RedirectToAction("Index", "Ticket");
         }
     }
 }

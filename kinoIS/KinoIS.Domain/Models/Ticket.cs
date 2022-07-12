@@ -13,6 +13,7 @@ namespace KinoIS.Domain.Models
         public int Quantity { get; set; }
         public string Genre { get; set; }
         public DateTime date { get; set; }
+        public int Price { get; set; }
         public virtual ICollection<TicketInShoppingCart> TicketInShoppingCarts { get; set; }
 
     }

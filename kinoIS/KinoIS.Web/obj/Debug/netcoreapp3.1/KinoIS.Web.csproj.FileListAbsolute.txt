@@ -96,7 +96,6 @@ C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
@@ -205,7 +204,6 @@ C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
-C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
@@ -446,3 +444,9 @@ C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Details.cshtml.g.cs
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Edit.cshtml.g.cs
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCarts\Index.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\Stripe.net.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll

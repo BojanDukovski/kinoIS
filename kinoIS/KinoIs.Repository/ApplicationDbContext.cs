@@ -20,6 +20,9 @@ namespace KinoIS.Repository
         public virtual DbSet<Ticket> tickets { get; set; }
         public virtual DbSet<ShoppingCart> shoppingCarts { get; set; }
         public virtual DbSet<TicketInShoppingCart> ticketInShoppingCarts { get; set; }
+        public virtual DbSet<Order> orders { get; set; }
+        public virtual DbSet<EmailMessage> EmailMessages { get; set; }
+        public virtual DbSet<TicketInOrder> TicketInOrders { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -40,5 +43,6 @@ namespace KinoIS.Repository
                 .HasForeignKey<ShoppingCart>(z => z.OwnerId);
 
         }
+
     }
 }

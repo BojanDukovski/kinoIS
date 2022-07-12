@@ -19,6 +19,45 @@ namespace KinoIs.Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("KinoIS.Domain.Models.EmailMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MailTo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmailMessages");
+                });
+
+            modelBuilder.Entity("KinoIS.Domain.Models.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("orders");
+                });
+
             modelBuilder.Entity("KinoIS.Domain.Models.ShoppingCart", b =>
                 {
                     b.Property<Guid>("Id")
@@ -27,6 +66,9 @@ namespace KinoIs.Repository.Migrations
 
                     b.Property<string>("OwnerId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -49,6 +91,9 @@ namespace KinoIs.Repository.Migrations
                     b.Property<string>("Movie")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -58,6 +103,33 @@ namespace KinoIs.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tickets");
+                });
+
+            modelBuilder.Entity("KinoIS.Domain.Relations.TicketInOrder", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("TicketId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("TicketInOrders");
                 });
 
             modelBuilder.Entity("KinoIS.Domain.Relations.TicketInShoppingCart", b =>
@@ -287,7 +359,7 @@ namespace KinoIs.Repository.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("KinoIS.Domain.Identity.KinoUser", b =>
+            modelBuilder.Entity("KinoIS.Domain.Models.KinoUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -306,11 +378,31 @@ namespace KinoIs.Repository.Migrations
                     b.HasDiscriminator().HasValue("KinoUser");
                 });
 
+            modelBuilder.Entity("KinoIS.Domain.Models.Order", b =>
+                {
+                    b.HasOne("KinoIS.Domain.Models.KinoUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("KinoIS.Domain.Models.ShoppingCart", b =>
                 {
-                    b.HasOne("KinoIS.Domain.Identity.KinoUser", "Owner")
+                    b.HasOne("KinoIS.Domain.Models.KinoUser", "Owner")
                         .WithOne("UserCart")
                         .HasForeignKey("KinoIS.Domain.Models.ShoppingCart", "OwnerId");
+                });
+
+            modelBuilder.Entity("KinoIS.Domain.Relations.TicketInOrder", b =>
+                {
+                    b.HasOne("KinoIS.Domain.Models.Order", "Order")
+                        .WithMany("TicketInOrders")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KinoIS.Domain.Models.Ticket", "Ticket")
+                        .WithMany()
+                        .HasForeignKey("TicketId");
                 });
 
             modelBuilder.Entity("KinoIS.Domain.Relations.TicketInShoppingCart", b =>

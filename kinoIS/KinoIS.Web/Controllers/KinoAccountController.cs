@@ -56,11 +56,15 @@ namespace KinoIS.Web.Controllers
                         EmailConfirmed = true,
                         PhoneNumberConfirmed = true,
                         PhoneNumber = request.PhoneNumber,
-                    };
+                    }; 
                     var result = await userManager.CreateAsync(user, request.Password);
                     if (result.Succeeded)
                     {
+
                         ShoppingCart shoppingCart = this.shoppingCartService.create(user.Id);
+                        user.UserCart = shoppingCart;
+                        //ShoppingCart shoppingCart = this.shoppingCartService.create(user.Id);
+
                         return RedirectToAction("Login");
                     }
                     else

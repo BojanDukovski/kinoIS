@@ -1,6 +1,8 @@
 ﻿using KinoIs.Repository.Interface;
 using KinoIS.Domain.Models;
 using KinoIS.Repository;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +21,14 @@ namespace KinoIs.Repository.Implementation
 
         public KinoUser findById(string id)
         {
-            Guid guidId = Guid.Parse(id);
-            return this.context.users.Where(x => x.Id.Equals(guidId)).FirstOrDefault(); 
+            return this.context.users.Where(x => x.Id == id).FirstOrDefault();
+        }
+
+        public KinoUser Update(KinoUser user)
+        {
+            this.context.users.Update(user);
+            this.context.SaveChanges();
+            return user;
         }
     }
 }

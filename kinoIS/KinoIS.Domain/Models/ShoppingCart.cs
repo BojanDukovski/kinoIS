@@ -10,6 +10,7 @@ namespace KinoIS.Domain.Models
     {
         public Guid Id { get; set; }
         public string OwnerId { get; set; }
+        public double TotalPrice { get; set; }
         public virtual KinoUser Owner { get; set; }
         public virtual ICollection<TicketInShoppingCart> TicketInShoppingCarts { get; set; }
 

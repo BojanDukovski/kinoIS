@@ -10,6 +10,7 @@ using KinoIS.Repository;
 using KinoIs.Repository.Interface;
 using KinoIS.Service.Interface;
 using System.Security.Claims;
+using KinoIS.Domain.Relations;
 
 namespace KinoIS.Web.Controllers
 {
@@ -30,8 +31,9 @@ namespace KinoIS.Web.Controllers
         }
 
         // GET: Tickets
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(bool? orderCompleted)
         {
+            if (orderCompleted == true) ViewBag.OrderCompleted = true;
             return View(await _context.tickets.ToListAsync());
         }
 
@@ -170,7 +172,8 @@ namespace KinoIS.Web.Controllers
         public IActionResult AddToCart(Guid ticketId)
         {
             ShoppingCart shoppingCart = this.shoppingCartService.findByOwnerId(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            this.ticketInShoppingCartService.add(shoppingCart.Id, ticketId);
+            TicketInShoppingCart tisc = this.ticketInShoppingCartService.add(shoppingCart.Id, ticketId);
+            shoppingCart.TicketInShoppingCarts.Add(tisc);
             return RedirectToAction(nameof(Index));
         }
     }

@@ -1,7 +1,10 @@
 using KinoIs.Repository.Implementation;
 using KinoIs.Repository.Interface;
+using KinoIS.Domain;
 using KinoIS.Domain.Models;
 using KinoIS.Repository;
+using KinoIS.Service;
+using KinoIS.Service.Implementation;
 using KinoIS.Service.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +25,12 @@ namespace KinoIS.Web
 {
     public class Startup
     {
+        private EmailSettings emailService;
         public Startup(IConfiguration configuration)
         {
+            emailService = new EmailSettings();
             Configuration = configuration;
+            Configuration.GetSection("EmailSettings").Bind(emailService);
         }
 
         public IConfiguration Configuration { get; }
@@ -45,6 +52,18 @@ namespace KinoIS.Web
             services.AddScoped(typeof(TicketInShoppingCartRepository), typeof(TicketInShoppingCartRepositoryImpl));
             services.AddScoped(typeof(KinoUserRepository), typeof(KinoUserRepositoryImpl));
 
+            services.AddScoped(typeof(OrderRepository), typeof(OrderRepositoryImpl));
+            services.AddTransient(typeof(KinoIS.Service.Interface.OrderService), typeof(KinoIS.Service.Implementation.OrderServiceImpl));
+            services.AddScoped(typeof(EmailMessageRepository), typeof(EmailMessageRepositoryImpl));
+            services.AddScoped(typeof(TicketInOrderRepository), typeof(TicketInOrderRepositoryImpl));
+
+            services.AddScoped<EmailSettings>(es => emailService);
+            services.AddScoped<EmailMessageService, EmailMessageServiceImpl>(email => new EmailMessageServiceImpl(emailService));
+            services.AddScoped<BackgroundEmailSender, BackgroundEmailSenderImpl>();
+            services.AddHostedService<ConsumeScopedHostedService>();
+
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
+
             services.AddTransient<TicketService, Service.Implementation.TicketServiceImpl>();
             services.AddTransient<ShoppingCartService, Service.Implementation.ShoppingCartServiceImpl>();
             services.AddTransient<KinoUserService, Service.Implementation.KinoUserServiceImpl>();
@@ -54,6 +73,7 @@ namespace KinoIS.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            StripeConfiguration.SetApiKey(Configuration.GetSection("Stripe")["SecretKey"]);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
