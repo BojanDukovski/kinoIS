@@ -203,8 +203,8 @@ namespace KinoIS.Web.Controllers
 
             var charge = chargeService.Create(new ChargeCreateOptions
             {
-                Amount = (Convert.ToInt32(3.33) * 100), //namesti order.TotalPrice
-                Description = "EShop Application Payment",
+                Amount = (Convert.ToInt32(order.TotalPrice) * 100), 
+                Description = "KinoIS Application Payment",
                 Currency = "usd",
                 Customer = customer.Id
             });

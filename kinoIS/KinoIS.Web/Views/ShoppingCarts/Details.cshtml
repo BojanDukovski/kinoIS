@@ -9,7 +9,6 @@
 <h1>SHOPPING CART</h1>
 
     <div class="row m-4">
-        
             <form asp-controller="ShoppingCarts" asp-action="PayOrder" method="post">
                 <article>
                     <script src="https://checkout.stripe.com/checkout.js"
@@ -25,31 +24,28 @@
         
     </div>
 
-<div>
+<div class="text-center">
     <hr />
-    <dl class="row" style="border: dashed red 1px;">
-        <dt class = "col-1">
+    <dl class="row text-center" style="border: dashed red 1px;">
+        
             <h3>@Html.DisplayNameFor(model => model.Owner): </h3>
-        </dt>
-        <dd class = "col-11">
+        
+        
             <h3> <b>@Html.DisplayFor(model => model.Owner.Name) @Html.DisplayFor(model => model.Owner.Surname)</b></h3> 
-        </dd>
+        
     </dl>
 </div>
 
-<h1>Tickets</h1>
-<ul>
-    @foreach(var item in ViewBag.tickets)
+<div style="border: solid lightgray 5px; padding: 100px; margin-top:10%; border-radius:10%">
+    <h1 style="display:inline;">Tickets: </h1>
+    @if (ViewBag.tickets.Count == 0)
     {
-        <li>Movie: @item.Movie, Quantity: @item.Quantity, Genre: @item.Genre</li>
+        <h4 style="display: inline; color:red;">You don't have any tickets in your cart.</h4>
     }
-</ul>
-
-
-
-
-
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <ul class="list-group list-group-flush">
+        @foreach(var item in ViewBag.tickets)
+        {
+            <li class="list-group-item">Movie: @item.Movie, Quantity: @item.Quantity, Genre: @item.Genre</li>
+        }
+    </ul>
 </div>

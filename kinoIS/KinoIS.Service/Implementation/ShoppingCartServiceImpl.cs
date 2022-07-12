@@ -50,7 +50,20 @@ namespace KinoIS.Service.Implementation
 
         public ShoppingCart findByOwnerId(string ownerId)
         {
-            return this.shoppingCartRepository.findByOwnerId(ownerId);
+            var loggedInUser = this.userRepository.findById(ownerId);
+
+            var userCard = this.shoppingCartRepository.findByOwnerId(ownerId);
+
+            List<Ticket> allTickets = this.ticketInShoppingCartRepository.findAllTicketsByShoppingCartId(userCard.Id);
+
+            double totalPrice = 0.00;
+            foreach (var ticket in allTickets)
+            {
+                totalPrice += (ticket.Quantity * ticket.Price);
+            }
+            ShoppingCart shoppingCart = this.shoppingCartRepository.findByOwnerId(ownerId);
+            shoppingCart.TotalPrice = totalPrice;
+            return shoppingCart;
         }
         public ShoppingCart create(string ownerId)
         {
@@ -81,16 +94,6 @@ namespace KinoIS.Service.Implementation
 
                 List<TicketInOrder> ticketInOrders = new List<TicketInOrder>();
 
-                /*
-                var result = userCard.TicketInShoppingCarts.Select(z => new TicketInOrder
-                {
-                    Id = Guid.NewGuid(),
-                    OrderId = order.Id,
-                    ProductId = z.TicketId,
-                    Quantity = 1
-                    //Quantity = z.CurrentTicket.Quantity
-                }).ToList();
-                */
                 var result = new List<TicketInOrder>();
                 List<Ticket> allTickets = this.ticketInShoppingCartRepository.findAllTicketsByShoppingCartId(userCard.Id);
                 foreach (var item in allTickets)
@@ -112,8 +115,7 @@ namespace KinoIS.Service.Implementation
                     var currentItem = result[i - 1];
                     Ticket ticket = allTickets[i - 1];
                     currentItem.Ticket = ticket;
-                    totalPrice += 1;
-                                  //currentItem.Quantity * currentItem.Ticket.Price;
+                    totalPrice += currentItem.Quantity * currentItem.Ticket.Price;
                     sb.AppendLine(i.ToString() + ". " + currentItem.Ticket.Movie + " with quantity of: " + currentItem.Quantity + " and price of: $" + currentItem.Ticket.Price);
                 }
 

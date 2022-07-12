@@ -8,9 +8,12 @@
 
 <p id="oc" orderCompleted="@ViewBag.OrderCompleted"></p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@if (ViewBag.Role == "Admin")
+{
+    <p>
+        <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+    </p>
+}
 
 <form action="/Tickets/SearchByDate" method="post" class="text-right mb-5">
     <h3>Filter by date</h3>
@@ -33,6 +36,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.date)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -52,10 +58,18 @@
                 @Html.DisplayFor(modelItem => item.date)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> | 
-                <a asp-action="AddToCart" asp-route-ticketId="@item.Id">Add To Cart</a> 
+                Each: 
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @if (ViewBag.Role == "Admin")
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>      
+                }
+
+                <a class="btn btn-outline-primary" asp-action="AddToCart" asp-route-ticketId="@item.Id">Add To Cart</a> 
             </td>
         </tr>
 }

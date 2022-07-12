@@ -20,19 +20,23 @@ namespace KinoIS.Web.Controllers
         private readonly TicketRepository ticketRepository;
         private readonly ApplicationDbContext _context;
         private readonly ShoppingCartService shoppingCartService;
+        private readonly KinoUserService kinoUserService;
 
         public TicketsController(ApplicationDbContext context, TicketRepository ticketRepository, 
-            TicketInShoppingCartService ticketInShoppingCartService, ShoppingCartService shoppingCartService)
+            TicketInShoppingCartService ticketInShoppingCartService, ShoppingCartService shoppingCartService, 
+            KinoUserService kinoUserService)
         {
             _context = context;
             this.ticketRepository = ticketRepository;
             this.ticketInShoppingCartService = ticketInShoppingCartService;
             this.shoppingCartService = shoppingCartService;
+            this.kinoUserService = kinoUserService;
         }
 
         // GET: Tickets
         public async Task<IActionResult> Index(bool? orderCompleted)
         {
+            ViewBag.Role = this.kinoUserService.findById(User.FindFirstValue(ClaimTypes.NameIdentifier)).Role;
             if (orderCompleted == true) ViewBag.OrderCompleted = true;
             return View(await _context.tickets.ToListAsync());
         }
@@ -66,7 +70,7 @@ namespace KinoIS.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Movie,Quantity,Genre,date")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,Movie,Quantity,Genre,date,Price")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +103,7 @@ namespace KinoIS.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Movie,Quantity,Genre,date")] Ticket ticket)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Movie,Quantity,Genre,date,Price")] Ticket ticket)
         {
             if (id != ticket.Id)
             {
