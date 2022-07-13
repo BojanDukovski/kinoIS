@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eOrFfOnu8VRf+v8KzIadmSfFBOyMiL5hWfQ2EkzpVX29dqB3AGoPfdLkMYtG/znSWpjRMtL+F6iHhIzMJWWbig==",
+  "dgSpecHash": "+nv0v4vPr0EMxM0o4tRSo4FsmXyhUxbap4Yy+YjxLxxCx466mp/IS4xM6Uugf6BcaqXwlLaaWoncN8PyXRk2Bg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Web\\KinoIS.Web.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.12\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.12.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\3.1.12\\microsoft.aspnetcore.identity.ui.3.1.12.nupkg.sha512",
+    "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
+    "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.12\\microsoft.aspnetcore.mvc.razor.extensions.3.1.12.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.12\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.12.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
@@ -71,6 +73,7 @@
     "C:\\Users\\Bojan\\.nuget\\packages\\mimekit\\2.11.0\\mimekit.2.11.0.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Bojan\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\portable.bouncycastle\\1.8.10\\portable.bouncycastle.1.8.10.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

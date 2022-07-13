@@ -30,7 +30,12 @@
       "ProjectGuid": "6b48b913-97a5-45a8-8de1-9d9a8d3c0e81",
       "DisplayName": "KinoIS.Service",
       "ColorIndex": 4
+    },
+    "6632118b-6d93-4d7f-b483-e963689a7fbe": {
+      "ProjectGuid": "6632118b-6d93-4d7f-b483-e963689a7fbe",
+      "DisplayName": "KinoISAdminApplication",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

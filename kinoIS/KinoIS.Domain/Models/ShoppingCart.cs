@@ -18,5 +18,9 @@ namespace KinoIS.Domain.Models
         {
             this.OwnerId = OwnerId;
         }
+
+        public ShoppingCart()
+        {
+        }
     }
 }
