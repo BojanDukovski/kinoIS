@@ -467,3 +467,5 @@ C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\ExcelNumberFormat.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Error.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\ExcelDataReader.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ImportUsers.cshtml.g.cs

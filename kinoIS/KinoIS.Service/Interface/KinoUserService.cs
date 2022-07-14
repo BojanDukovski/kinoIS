@@ -9,5 +9,6 @@ namespace KinoIS.Service.Interface
     {
         KinoUser findById(string id);
         KinoUser findByEmail(string email);
+        void Save (KinoUser user);
     }
 }

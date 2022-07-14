@@ -22,5 +22,10 @@ namespace KinoIS.Service.Implementation
         {
             return this.kinoUserRepository.findByEmail(email);
         }
+
+        public void Save(KinoUser user)
+        {
+            this.kinoUserRepository.Save(user);
+        }
     }
 }

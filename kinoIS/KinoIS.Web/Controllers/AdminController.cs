@@ -1,8 +1,10 @@
 ﻿using ClosedXML.Excel;
+using ExcelDataReader;
 using KinoIs.Repository.Interface;
 using KinoIS.Domain.Models;
 using KinoIS.Domain.Relations;
 using KinoIS.Service.Interface;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -97,6 +99,50 @@ namespace KinoIS.Web.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+        [HttpGet]
+        public IActionResult ImportUsers()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ImportUsers(IFormFile file)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (this.userService.findById(userId).Role == "Admin")
+            {
+                string pathToFile = $"{Directory.GetCurrentDirectory()}\\Files\\{file.FileName}";
+
+                using (FileStream fileStream = System.IO.File.Create(pathToFile))
+                {
+                    file.CopyTo(fileStream);
+                    fileStream.Flush();
+                }
+
+                System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+                List<KinoUser> userList = new List<KinoUser>();
+
+                using (var stream = System.IO.File.Open(pathToFile, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        while (reader.Read())
+                        {
+                            var user = new KinoUser
+                            {
+                                Email = reader.GetValue(0).ToString(),
+                                Password = reader.GetValue(1).ToString(),
+                                Role = reader.GetValue(2).ToString()
+                            };
+                            this.userService.Save(user);
+                        }
+                    }
+                }
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Error", "Admin");
         }
     }
 }

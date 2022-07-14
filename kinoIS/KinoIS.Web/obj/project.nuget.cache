@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Pzz/0ByzRm0OT3lD7eO2YK2m+UOEwFO4d7Thyu24gTXbGaJoIBOfjamacSvT3DA+xrxiHMP9m3peHhmul9neUg==",
+  "dgSpecHash": "4O2cqUp4tPsHOnGUTZlfU9lSo9QisT8TX+JFYXIrUjL/kU8r1h9AUKv3LMV9ZN81ountonWbt+mLnwPL3d+v4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bojan\\Documents\\GitHub\\kinoIS\\kinoIS\\KinoIS.Web\\KinoIS.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bojan\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
+    "C:\\Users\\Bojan\\.nuget\\packages\\exceldatareader\\3.1.0\\exceldatareader.3.1.0.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\excelnumberformat\\1.0.10\\excelnumberformat.1.0.10.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\gembox.document\\33.0.1187\\gembox.document.33.0.1187.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\mailkit\\2.11.1\\mailkit.2.11.1.nupkg.sha512",
@@ -121,6 +122,7 @@
     "C:\\Users\\Bojan\\.nuget\\packages\\system.composition.typedparts\\1.0.31\\system.composition.typedparts.1.0.31.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
+    "C:\\Users\\Bojan\\.nuget\\packages\\system.data.common\\4.3.0\\system.data.common.4.3.0.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\Bojan\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",

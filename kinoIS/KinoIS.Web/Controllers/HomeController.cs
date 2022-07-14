@@ -1,10 +1,12 @@
 ﻿
+using KinoIS.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace KinoIS.Web.Controllers
@@ -12,14 +14,18 @@ namespace KinoIS.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly KinoUserService userService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, KinoUserService userService)
         {
             _logger = logger;
+            this.userService = userService;
         }
 
         public IActionResult Index()
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.Role = this.userService.findById(userId).Role;
             return View();
         }
 
