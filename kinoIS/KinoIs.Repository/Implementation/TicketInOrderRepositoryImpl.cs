@@ -28,7 +28,7 @@ namespace KinoIs.Repository.Implementation
             List<Ticket> tickets = new List<Ticket>();
             foreach (var ticketAndOrder in ticketsAndOrders)
             {
-                tickets.Add(ticketAndOrder.Ticket); //Ticket e tuka null zaboraeno e da se dodeli vrednost!!
+                tickets.Add(this.context.tickets.Where(x => x.Id.Equals(ticketAndOrder.ProductId)).FirstOrDefault()); //Ticket e tuka null zaboraeno e da se dodeli vrednost!!
             }
             List<Ticket> test = tickets;
 

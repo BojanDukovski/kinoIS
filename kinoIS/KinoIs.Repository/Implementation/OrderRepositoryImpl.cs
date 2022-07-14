@@ -37,11 +37,13 @@ namespace KinoIs.Repository.Implementation
 
         public Order getOrderDetails(Guid id)
         {
-            return entities
+            /*return entities
                .Include(z => z.User)
                .Include(z => z.TicketInOrders)
                .Include("TicketInOrders.Ticket")
-               .SingleOrDefaultAsync(z => z.Id == id).Result;
+               .SingleOrDefaultAsync(z => z.Id.Equals(id)).Result;*/
+            Order order = this.context.orders.Where(x => x.Id.Equals(id)).FirstOrDefault();
+            return order;
         }
 
         public Order Insert(Order order)

@@ -5,7 +5,8 @@
 <ul>
     @foreach(var item in Model)
     {
-        <!--<li>Movie: item.Movie, Price: item.Price, with quantity of: item.Quantity</li>-->
+       <li>Movie: @item.Movie, Price: @item.Price, with quantity of: @item.Quantity</li>
     }
     <a class="btn btn-outline-danger" asp-controller="Orders" asp-action="DeleteOrder" asp-route-orderId="@ViewBag.orderId">Delete</a>
+    <a class="btn btn-outline-primary" asp-controller="Orders" asp-action="CreateInvoice" asp-route-orderId="@ViewBag.orderId">Create invoice</a>
 </ul>

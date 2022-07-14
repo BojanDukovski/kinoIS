@@ -194,6 +194,7 @@ namespace KinoIS.Web.Controllers
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var order = this.shoppingCartService.findByOwnerId(userId); 
+            
 
             var customer = customerService.Create(new CustomerCreateOptions
             {
