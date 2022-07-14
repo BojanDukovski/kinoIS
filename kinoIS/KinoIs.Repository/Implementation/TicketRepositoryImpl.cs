@@ -38,6 +38,12 @@ namespace KinoIs.Repository.Implementation
         {
             return this.context.tickets.Where(x => x.date.Equals(dateParam)).ToList();
         }
+
+        public List<Ticket> findByGenre(string genre)
+        {
+            return this.context.tickets.Where(x => x.Genre.Equals(genre)).ToList();
+        }
+
         public Ticket findById(Guid id)
         {
             return this.context.tickets.Where(x => x.Id.Equals(id)).FirstOrDefault();

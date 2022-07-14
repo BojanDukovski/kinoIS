@@ -37,11 +37,6 @@ namespace KinoIs.Repository.Implementation
 
         public Order getOrderDetails(Guid id)
         {
-            /*return entities
-               .Include(z => z.User)
-               .Include(z => z.TicketInOrders)
-               .Include("TicketInOrders.Ticket")
-               .SingleOrDefaultAsync(z => z.Id.Equals(id)).Result;*/
             Order order = this.context.orders.Where(x => x.Id.Equals(id)).FirstOrDefault();
             return order;
         }
@@ -57,6 +52,12 @@ namespace KinoIs.Repository.Implementation
             Order order = this.context.orders.Where(x => x.Id.Equals(orderId)).FirstOrDefault();
             this.context.orders.Remove(order);
             this.context.SaveChanges();
+        }
+
+        public Order findById(Guid orderId)
+        {
+            Order order = this.context.orders.Where(x => x.Id == orderId).FirstOrDefault();
+            return order;
         }
     }
 }

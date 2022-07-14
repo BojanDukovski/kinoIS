@@ -249,6 +249,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.95.4, )"
+            },
             "GemBox.Document": {
               "target": "Package",
               "version": "[33.0.1187, )"

@@ -12,5 +12,6 @@ namespace KinoIs.Repository.Interface
         List<Ticket> findAll();
         List<Ticket> findAllByDate(DateTime date);
         Ticket findById(Guid id);
+        List<Ticket> findByGenre(string genre);
     }
 }

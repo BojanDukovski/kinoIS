@@ -1,5 +1,6 @@
 ﻿using KinoIs.Repository.Interface;
 using KinoIS.Domain.Models;
+using KinoIS.Domain.Relations;
 using KinoIS.Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,12 @@ namespace KinoIS.Service.Implementation
         {
             this.ticketInOrderRepository = ticketInOrderRepository;
         }
+
+        public List<TicketInOrder> findAll()
+        {
+            return this.ticketInOrderRepository.findAll();
+        }
+
         public List<Ticket> ticketsInOrder(Guid orderId)
         {
             return this.ticketInOrderRepository.ticketsInOrder(orderId);

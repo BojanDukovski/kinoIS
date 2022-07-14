@@ -34,6 +34,11 @@ namespace KinoIS.Service.Implementation
             return this.ticketRepository.findAllByDate(date);
         }
 
+        public List<Ticket> findByGenre(string genre)
+        {
+            return this.ticketRepository.findByGenre(genre);
+        }
+
         public Ticket findById(Guid id)
         {
             return this.ticketRepository.findById(id);

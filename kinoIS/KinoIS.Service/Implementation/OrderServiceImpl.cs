@@ -33,5 +33,10 @@ namespace KinoIS.Service.Implementation
         {
            this._orderRepository.deleteOrder(orderId);
         }
+
+        public Order findById(Guid orderId)
+        {
+            return this._orderRepository.findById(orderId);
+        }
     }
 }

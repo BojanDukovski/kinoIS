@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
@@ -30,6 +31,14 @@ namespace KinoIS.Web.Controllers
         {
             KinoUser user = this.kinoUserService.findByEmail(email);
             List<Order> orders = this.orderService.getAllOrdersByUserId(user.Id);
+            ViewBag.Role = user.Role;
+            List<Ticket> tickets = this.ticketService.findAll();
+            List<string> genres = new List<string>();
+            foreach(Ticket ticket in tickets)
+            {
+                genres.Add(ticket.Genre);
+            }
+            ViewBag.Genres = genres;
             return View(orders);
         }
         public IActionResult OrderDetails(Guid orderId)

@@ -2,6 +2,43 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "ClosedXML/0.95.4": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.7.2",
+          "ExcelNumberFormat": "1.0.10",
+          "Microsoft.CSharp": "4.7.0",
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.7.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.IO.Packaging": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/DocumentFormat.OpenXml.dll": {}
+        }
+      },
+      "ExcelNumberFormat/1.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        }
+      },
       "GemBox.Document/33.0.1187": {
         "type": "package",
         "dependencies": {
@@ -1938,6 +1975,29 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Packaging/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.IO.Packaging.dll": {}
+        }
+      },
       "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3000,6 +3060,63 @@
     }
   },
   "libraries": {
+    "ClosedXML/0.95.4": {
+      "sha512": "YixFPzUJ4Ni2AaW/FbPgzFvdtjIzE/4NKROwI1RqIQHWka7QN9Spt4sHuXaSk9PLmXBkk8newHGW0UWLcLs5GA==",
+      "type": "package",
+      "path": "closedxml/0.95.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "closedxml.0.95.4.nupkg.sha512",
+        "closedxml.nuspec",
+        "lib/net40/ClosedXML.dll",
+        "lib/net40/ClosedXML.pdb",
+        "lib/net40/ClosedXML.xml",
+        "lib/net46/ClosedXML.dll",
+        "lib/net46/ClosedXML.pdb",
+        "lib/net46/ClosedXML.xml",
+        "lib/netstandard2.0/ClosedXML.dll",
+        "lib/netstandard2.0/ClosedXML.pdb",
+        "lib/netstandard2.0/ClosedXML.xml",
+        "nuget-logo.png"
+      ]
+    },
+    "DocumentFormat.OpenXml/2.7.2": {
+      "sha512": "tWT7iu0ab9PNoMTWjv24rt+qnyqvcnPOYs167vPnk4aegAYSAxoUjwNW+VxY8xoLtJntQ/JlWTi7Vt+8TghLlQ==",
+      "type": "package",
+      "path": "documentformat.openxml/2.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "documentformat.openxml.2.7.2.nupkg.sha512",
+        "documentformat.openxml.nuspec",
+        "lib/net35/DocumentFormat.OpenXml.dll",
+        "lib/net35/DocumentFormat.OpenXml.xml",
+        "lib/net40/DocumentFormat.OpenXml.dll",
+        "lib/net40/DocumentFormat.OpenXml.xml",
+        "lib/net46/DocumentFormat.OpenXml.dll",
+        "lib/net46/DocumentFormat.OpenXml.xml",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.dll",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.xml"
+      ]
+    },
+    "ExcelNumberFormat/1.0.10": {
+      "sha512": "dRx817M5t0sv4GCJyAXU8qmhFXcqRpCHzLpxNmkMWTvzlfE0/KM7BNk6qEble0ffAr4xT7RyU7s/HpovVlA/9g==",
+      "type": "package",
+      "path": "excelnumberformat/1.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "excelnumberformat.1.0.10.nupkg.sha512",
+        "excelnumberformat.nuspec",
+        "lib/net20/ExcelNumberFormat.dll",
+        "lib/net20/ExcelNumberFormat.xml",
+        "lib/netstandard1.0/ExcelNumberFormat.dll",
+        "lib/netstandard1.0/ExcelNumberFormat.xml",
+        "lib/netstandard2.0/ExcelNumberFormat.dll",
+        "lib/netstandard2.0/ExcelNumberFormat.xml"
+      ]
+    },
     "GemBox.Document/33.0.1187": {
       "sha512": "6tZR3VepV8qpF+JqzPc+vhZJcNIDAHdF4fL+q6fQSdD+1sjW1yy7PA82LfLK4iquSG7vR2BG8PD5wqBt3yxtOg==",
       "type": "package",
@@ -6691,6 +6808,23 @@
         "system.io.filesystem.primitives.nuspec"
       ]
     },
+    "System.IO.Packaging/4.0.0": {
+      "sha512": "taPqPWcAj/h6e/c+zIWIVe1ddJtpV6acC6g9GpolxUcIwUaH6zc0ZbFS8kkVzBkuWv76pMalKeTzfmHtfT1pXA==",
+      "type": "package",
+      "path": "system.io.packaging/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/net46/System.IO.Packaging.dll",
+        "lib/netstandard1.3/System.IO.Packaging.dll",
+        "ref/net46/System.IO.Packaging.dll",
+        "ref/netstandard1.3/System.IO.Packaging.dll",
+        "system.io.packaging.4.0.0.nupkg.sha512",
+        "system.io.packaging.nuspec"
+      ]
+    },
     "System.Linq/4.3.0": {
       "sha512": "5DbqIUpsDp0dFftytzuMmc0oeMdQwjcP/EWxsksIz/w1TcFRkZ3yKKz0PqiYFMmEwPSWw+qNVqD7PJ889JzHbw==",
       "type": "package",
@@ -9601,6 +9735,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "ClosedXML >= 0.95.4",
       "GemBox.Document >= 33.0.1187",
       "KinoIS.Domain >= 1.0.0",
       "KinoIS.Service >= 1.0.0",
@@ -9665,6 +9800,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "ClosedXML": {
+            "target": "Package",
+            "version": "[0.95.4, )"
+          },
           "GemBox.Document": {
             "target": "Package",
             "version": "[33.0.1187, )"

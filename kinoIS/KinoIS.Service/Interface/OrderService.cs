@@ -11,5 +11,6 @@ namespace KinoIS.Service.Interface
         public Order getOrderDetails(Guid id);
         public List<Order> getAllOrdersByUserId(string userId);
         void deleteOrder(Guid orderId);
+        Order findById(Guid orderId);
     }
 }

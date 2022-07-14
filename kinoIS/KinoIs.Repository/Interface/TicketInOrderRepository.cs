@@ -10,5 +10,6 @@ namespace KinoIs.Repository.Interface
     {
         TicketInOrder Insert(TicketInOrder ticketInOrder);
         List<Ticket> ticketsInOrder(Guid orderId);
+        List<TicketInOrder> findAll();
     }
 }

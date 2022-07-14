@@ -16,6 +16,12 @@ namespace KinoIs.Repository.Implementation
         {
             this.context = context; 
         }
+
+        public List<TicketInOrder> findAll()
+        {
+            return this.context.TicketInOrders.ToList();
+        }
+
         public TicketInOrder Insert(TicketInOrder ticketInOrder)
         {
             this.context.TicketInOrders.Add(ticketInOrder);
