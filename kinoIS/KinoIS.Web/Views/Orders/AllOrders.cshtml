@@ -15,6 +15,7 @@
         <div class="form-group col-12">
             <label for="genre">Genre</label>
             <select class="form-control" id="genre" name="genre">
+                <option value="notSelected">Select genre</option>
                 @foreach (var genre in ViewBag.Genres)
                 {
                     <option value="@genre">@genre</option>

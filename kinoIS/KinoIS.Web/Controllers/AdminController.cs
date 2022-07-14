@@ -48,7 +48,7 @@ namespace KinoIS.Web.Controllers
                         }
                     }
                 } 
-                else
+                if (genre == "notSelected")
                 {
                     foreach (TicketInOrder tio in this.ticketInOrderService.findAll())
                     {
@@ -70,9 +70,9 @@ namespace KinoIS.Web.Controllers
                         var item = result[i - 1];
 
                         worksheet.Cell(i + 1, 1).Value = item.Id.ToString();
-                        worksheet.Cell(i + 1, 2).Value = item.User.Name;
-                        worksheet.Cell(i + 1, 3).Value = item.User.Surname;
-                        worksheet.Cell(i + 1, 4).Value = item.User.Email;
+                        //worksheet.Cell(i + 1, 2).Value = item.User.Name;
+                        //worksheet.Cell(i + 1, 3).Value = item.User.Surname;
+                        //worksheet.Cell(i + 1, 4).Value = item.User.Email;
 
                         for (int p = 1; p <= item.TicketInOrders.Count(); p++)
                         {
