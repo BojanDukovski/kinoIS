@@ -453,3 +453,5 @@ C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Orders\AllOrders.cshtml.g.cs
+C:\Users\Bojan\Documents\GitHub\kinoIS\kinoIS\KinoIS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Orders\OrderDetails.cshtml.g.cs

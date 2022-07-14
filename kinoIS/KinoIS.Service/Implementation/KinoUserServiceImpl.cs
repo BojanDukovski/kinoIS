@@ -18,5 +18,9 @@ namespace KinoIS.Service.Implementation
         {
             return this.kinoUserRepository.findById(id);
         }
+        public KinoUser findByEmail(string email)
+        {
+            return this.kinoUserRepository.findByEmail(email);
+        }
     }
 }

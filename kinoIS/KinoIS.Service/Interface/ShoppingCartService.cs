@@ -14,6 +14,7 @@ namespace KinoIS.Service.Interface
         void deleteById(Guid id);
         ShoppingCart create(string ownerId);
         bool order(string userId);
+        void removeTicketById(Guid ticketId);
 
     }
 }

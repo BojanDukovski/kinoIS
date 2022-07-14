@@ -29,6 +29,12 @@ namespace KinoIs.Repository.Implementation
                 .ToListAsync().Result;
         }
 
+        public List<Order> getAllOrdersByUserId(string userId)
+        {
+            List<Order> orders = this.context.orders.Where(x => x.UserId.Equals(userId)).ToList();
+            return orders;
+        }
+
         public Order getOrderDetails(Guid id)
         {
             return entities
@@ -43,6 +49,12 @@ namespace KinoIs.Repository.Implementation
             this.context.orders.Add(order);
             this.context.SaveChanges();
             return order;
+        }
+        public void deleteOrder(Guid orderId)
+        {
+            Order order = this.context.orders.Where(x => x.Id.Equals(orderId)).FirstOrDefault();
+            this.context.orders.Remove(order);
+            this.context.SaveChanges();
         }
     }
 }

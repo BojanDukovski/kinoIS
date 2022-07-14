@@ -42,5 +42,10 @@ namespace KinoIs.Repository.Implementation
             this.context.SaveChanges();
             return cart;
         }
+
+        public void removeTicketById(Guid ticketId)
+        {
+            return;
+        }
     }
 }

@@ -30,5 +30,9 @@ namespace KinoIs.Repository.Implementation
             this.context.SaveChanges();
             return user;
         }
+        public KinoUser findByEmail(string email)
+        {
+            return this.context.users.Where(x => x.Email.Equals(email)).FirstOrDefault();
+        }
     }
 }

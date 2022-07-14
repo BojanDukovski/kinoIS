@@ -9,5 +9,7 @@ namespace KinoIS.Service.Interface
     {
         public List<Order> getAllOrders();
         public Order getOrderDetails(Guid id);
+        public List<Order> getAllOrdersByUserId(string userId);
+        void deleteOrder(Guid orderId);
     }
 }

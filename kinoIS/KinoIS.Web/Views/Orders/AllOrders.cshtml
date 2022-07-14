@@ -1,0 +1,11 @@
+﻿@model ICollection<KinoIS.Domain.Models.Order>
+
+<h1>All Orders</h1>
+
+@foreach(var item in Model)
+{
+    <li class="row">
+        <div class="col-4" style="border-right: solid gray 1px;">@item.Id</div>
+        <div class="col"><a class="btn btn-outline-primary btn-sm" asp-controller="Orders" asp-action="OrderDetails" asp-route-orderId="@item.Id">View order details</a></div>
+    </li>
+}

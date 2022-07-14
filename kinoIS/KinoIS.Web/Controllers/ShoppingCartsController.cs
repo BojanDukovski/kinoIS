@@ -226,5 +226,10 @@ namespace KinoIS.Web.Controllers
 
             return RedirectToAction("Index", "Ticket");
         }
+        public IActionResult RemoveTicket(Guid ticketId, Guid scId)
+        {
+            this.ticketInShoppingCartService.removeTicket(ticketId, scId);
+            return RedirectToAction("Details", "ShoppingCarts", new { email = User.Identity.Name });
+        }
     }
 }

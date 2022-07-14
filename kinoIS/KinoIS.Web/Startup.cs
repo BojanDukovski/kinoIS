@@ -64,6 +64,7 @@ namespace KinoIS.Web
 
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
 
+            services.AddTransient<TicketInOrderService, Service.Implementation.TicketInOrderServiceImpl>();
             services.AddTransient<TicketService, Service.Implementation.TicketServiceImpl>();
             services.AddTransient<ShoppingCartService, Service.Implementation.ShoppingCartServiceImpl>();
             services.AddTransient<KinoUserService, Service.Implementation.KinoUserServiceImpl>();

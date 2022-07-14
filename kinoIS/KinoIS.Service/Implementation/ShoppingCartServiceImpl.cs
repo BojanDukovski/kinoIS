@@ -141,5 +141,10 @@ namespace KinoIS.Service.Implementation
 
             return false;
         }
+
+        public void removeTicketById(Guid ticketId)
+        {
+            this.shoppingCartRepository.removeTicketById(ticketId);
+        }
     }
 }

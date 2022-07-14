@@ -10,5 +10,7 @@ namespace KinoIs.Repository.Interface
         public List<Order> getAllOrders();
         public Order getOrderDetails(Guid model);
         public Order Insert(Order order);
+        public List<Order> getAllOrdersByUserId(string userId);
+        public void deleteOrder(Guid orderId);
     }
 }

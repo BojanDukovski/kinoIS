@@ -29,5 +29,10 @@ namespace KinoIS.Service.Implementation
         {
             return this.ticketInShoppingCartRepository.findAllByShoppingCartId(id);
         }
+
+        public void removeTicket(Guid ticketId, Guid scId)
+        {
+            this.ticketInShoppingCartRepository.removeTicket(ticketId, scId);
+        }
     }
 }

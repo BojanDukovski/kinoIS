@@ -9,5 +9,6 @@ namespace KinoIs.Repository.Interface
     {
         KinoUser findById(string id);
         KinoUser Update(KinoUser user);
+        KinoUser findByEmail(string email);
     }
 }

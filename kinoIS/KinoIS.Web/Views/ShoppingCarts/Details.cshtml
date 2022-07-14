@@ -45,7 +45,13 @@
     <ul class="list-group list-group-flush">
         @foreach(var item in ViewBag.tickets)
         {
-            <li class="list-group-item">Movie: @item.Movie, Quantity: @item.Quantity, Genre: @item.Genre</li>
+            <li class="list-group-item row">
+                <div>
+                    Movie: @item.Movie, Quantity: @item.Quantity, Genre: @item.Genre, Price: @item.Price
+                    <a class="btn btn-outline-danger btn-sm" style="margin-left:48%" asp-controller="ShoppingCarts" asp-action="RemoveTicket" asp-route-ticketId="@item.Id" asp-route-scId="@Model.Id">Remove</a>
+                </div>
+            </li>
+            
         }
     </ul>
 </div>

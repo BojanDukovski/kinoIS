@@ -1,0 +1,11 @@
+﻿@model ICollection<KinoIS.Domain.Models.Ticket>
+<h1>Details about order</h1>
+<hr />
+<h2>Tickets in this order</h2>
+<ul>
+    @foreach(var item in Model)
+    {
+        <!--<li>Movie: item.Movie, Price: item.Price, with quantity of: item.Quantity</li>-->
+    }
+    <a class="btn btn-outline-danger" asp-controller="Orders" asp-action="DeleteOrder" asp-route-orderId="@ViewBag.orderId">Delete</a>
+</ul>

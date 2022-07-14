@@ -12,5 +12,6 @@ namespace KinoIs.Repository.Interface
         List<TicketInShoppingCart> findAllByShoppingCartId(Guid id);
         TicketInShoppingCart add(Guid shoppingCartId, Guid ticketId);
         List<Ticket> findAllTicketsByShoppingCartId(Guid id);
+        void removeTicket(Guid ticketId, Guid scId);
     }
 }

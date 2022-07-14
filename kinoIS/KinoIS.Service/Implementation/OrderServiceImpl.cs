@@ -20,9 +20,18 @@ namespace KinoIS.Service.Implementation
             return this._orderRepository.getAllOrders();
         }
 
+        public List<Order> getAllOrdersByUserId(string userId)
+        {
+            return this._orderRepository.getAllOrdersByUserId(userId);
+        }
+
         public Order getOrderDetails(Guid id)
         {
             return this._orderRepository.getOrderDetails(id);
+        }
+        public void deleteOrder(Guid orderId)
+        {
+           this._orderRepository.deleteOrder(orderId);
         }
     }
 }

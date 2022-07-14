@@ -8,5 +8,6 @@ namespace KinoIS.Service.Interface
     public interface KinoUserService
     {
         KinoUser findById(string id);
+        KinoUser findByEmail(string email);
     }
 }

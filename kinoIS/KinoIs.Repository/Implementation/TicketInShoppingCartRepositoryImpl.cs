@@ -49,5 +49,13 @@ namespace KinoIs.Repository.Implementation
             }
             return tickets;
         }
+
+        public void removeTicket(Guid ticketId, Guid scId)
+        {
+            TicketInShoppingCart ticketInShoppingCart = this.context.ticketInShoppingCarts
+                .Where(x => x.TicketId.Equals(ticketId)).FirstOrDefault();
+            this.context.ticketInShoppingCarts.Remove(ticketInShoppingCart);
+            this.context.SaveChanges();
+        }
     }
 }

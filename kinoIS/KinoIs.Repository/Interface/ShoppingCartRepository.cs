@@ -12,5 +12,6 @@ namespace KinoIs.Repository.Interface
         ShoppingCart findByOwnerId(string ownerId);
         void deleteById(Guid id);
         ShoppingCart create(string ownerId);
+        void removeTicketById(Guid ticketId);
     }
 }
