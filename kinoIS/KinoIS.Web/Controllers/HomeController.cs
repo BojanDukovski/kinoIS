@@ -25,7 +25,10 @@ namespace KinoIS.Web.Controllers
         public IActionResult Index()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewBag.Role = this.userService.findById(userId).Role;
+            if (userId != null)
+            {
+                ViewBag.Role = this.userService.findById(userId).Role;
+            }
             return View();
         }
 

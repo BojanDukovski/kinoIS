@@ -4,22 +4,28 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="row">
+    <div class="col">
+        <h1>Tickets</h1>
 
-<p id="oc" orderCompleted="@ViewBag.OrderCompleted"></p>
+        <p id="oc" orderCompleted="@ViewBag.OrderCompleted"></p>
 
-@if (ViewBag.Role == "Admin")
-{
-    <p>
-        <a class="btn btn-outline-success" asp-action="Create">Create New</a>
-    </p>
-}
+        @if (ViewBag.Role == "Admin")
+        {
+            <p>
+                <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+            </p>
+        }
+    </div>
 
-<form action="/Tickets/SearchByDate" method="post" class="text-right mb-5">
-    <h3>Filter by date</h3>
-    <input name="date" type="datetime-local" />
-    <button type="submit" class="btn btn-outline-dark">Search</button>
-</form>
+    <div class="col">
+        <form action="/Tickets/SearchByDate" method="post" class="text-right mb-5">
+            <h3>Filter by date</h3>
+            <input name="date" type="datetime-local" />
+            <button type="submit" class="btn btn-outline-dark">Search</button>
+        </form>
+    </div>
+</div>
 
 <table class="table">
     <thead>

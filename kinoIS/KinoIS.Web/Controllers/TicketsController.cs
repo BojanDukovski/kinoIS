@@ -75,6 +75,7 @@ namespace KinoIS.Web.Controllers
             if (ModelState.IsValid)
             {
                 ticket.Id = Guid.NewGuid();
+                ticket.Quantity = 1;
                 _context.Add(ticket);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
